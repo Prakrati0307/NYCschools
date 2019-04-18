@@ -1,4 +1,4 @@
-package code.challange.a20190417_prakratisharma_nycschools.model;
+package code.challange.a20190417_prakratisharma_nycschools.models;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -45,14 +45,10 @@ public class SchoolDetail implements Serializable {
     private String writingScore;
 
 
-
-
-
-
-    public SchoolDetail(String name)
-    {
-        this.name=name;
+    public SchoolDetail(String name) {
+        this.name = name;
     }
+
     public String getName() {
         return name;
     }

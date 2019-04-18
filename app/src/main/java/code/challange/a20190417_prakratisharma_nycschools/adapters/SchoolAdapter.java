@@ -1,4 +1,4 @@
-package code.challange.a20190417_prakratisharma_nycschools.adapter;
+package code.challange.a20190417_prakratisharma_nycschools.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import code.challange.a20190417_prakratisharma_nycschools.R;
-import code.challange.a20190417_prakratisharma_nycschools.model.School;
+import code.challange.a20190417_prakratisharma_nycschools.models.School;
 
 public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolViewHolder> {
 
@@ -32,6 +32,7 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolView
     public void setClickListener(View.OnClickListener callback) {
         listener = callback;
     }
+
     @Override
     public SchoolViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.school_item, parent, false);
@@ -44,7 +45,8 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolView
         });
         return holder;
     }
-// settting the data
+
+    // settting the data
     @Override
     public void onBindViewHolder(SchoolViewHolder holder, int position) {
         holder.setSchoolItem(schoolList.get(position));
@@ -57,7 +59,7 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolView
         return schoolList != null ? schoolList.size() : 0;
     }
 
-// view holder class
+    // view holder class
     class SchoolViewHolder extends RecyclerView.ViewHolder {
 
         private TextView schoolName;
