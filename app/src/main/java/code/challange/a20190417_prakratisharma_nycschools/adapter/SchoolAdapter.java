@@ -12,7 +12,7 @@ import java.util.List;
 import code.challange.a20190417_prakratisharma_nycschools.R;
 import code.challange.a20190417_prakratisharma_nycschools.model.School;
 
-public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.RegionViewHolder> {
+public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolViewHolder> {
 
     private Context context;
     private List<School> schoolList;
@@ -33,9 +33,9 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.RegionView
         listener = callback;
     }
     @Override
-    public RegionViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SchoolViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.school_item, parent, false);
-        RegionViewHolder holder = new RegionViewHolder(v);
+        SchoolViewHolder holder = new SchoolViewHolder(v);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,29 +44,31 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.RegionView
         });
         return holder;
     }
-
+// settting the data
     @Override
-    public void onBindViewHolder(RegionViewHolder holder, int position) {
-        holder.setRegionItem(schoolList.get(position));
+    public void onBindViewHolder(SchoolViewHolder holder, int position) {
+        holder.setSchoolItem(schoolList.get(position));
         holder.itemView.setOnClickListener(listener);
     }
 
     @Override
     public int getItemCount() {
+
         return schoolList != null ? schoolList.size() : 0;
     }
 
-    class RegionViewHolder extends RecyclerView.ViewHolder {
+// view holder class
+    class SchoolViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView regionName;
+        private TextView schoolName;
 
-        RegionViewHolder(View regionItem) {
+        SchoolViewHolder(View regionItem) {
             super(regionItem);
-            regionName = regionItem.findViewById(R.id.region_name);
+            schoolName = regionItem.findViewById(R.id.school_name);
         }
 
-        private void setRegionItem(School region) {
-            regionName.setText(region.getName());
+        private void setSchoolItem(School region) {
+            schoolName.setText(region.getName());
         }
 
     }

@@ -30,7 +30,7 @@ public class SchoolActivity extends AppCompatActivity {
     private RecyclerView regionsRecyclerView;
     ProgressDialog progressDoalog;
 
-    List<School> photoList = null;
+    List<School> schoolList = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +43,13 @@ public class SchoolActivity extends AppCompatActivity {
         makeSchoolsListServiceCall();
 
     }
-
+// initializing the views
     private void initViews(){
         progressDoalog = new ProgressDialog(SchoolActivity.this);
         progressDoalog.setMessage("Loading....");
 
         regionsRecyclerView = findViewById(R.id.regions_recycler_view);
-        adapter = new SchoolAdapter(this,photoList);
+        adapter = new SchoolAdapter(this,schoolList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SchoolActivity.this);
         regionsRecyclerView.setLayoutManager(layoutManager);
         regionsRecyclerView.setAdapter(adapter);
@@ -58,25 +58,26 @@ public class SchoolActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dismissProgressBar();
-                final TextView regionNameView = v.findViewById(R.id.region_name);
+                final TextView regionNameView = v.findViewById(R.id.school_name);
                 final String regionName = regionNameView.getText().toString();
                 makeSchoolsDetailServiceCall(regionName);
             }
         });
     }
-
+// calling the School API
     private void makeSchoolsDetailServiceCall(String regionName) {
         MainApplication.apiManager.getSchoolDetail(regionName, new Callback<List<SchoolDetail>>() {
             @Override
             public void onResponse(Call<List<SchoolDetail>> call, Response<List<SchoolDetail>> response) {
                 dismissProgressBar();
                 if (response.isSuccessful()){
-                    System.out.println(response);
+                    // list of school details
                     List<SchoolDetail> countries = response.body();
                     if(countries != null && !countries.isEmpty()){
-                        SchoolDetail countryModel = countries.get(0); // As we are getting only one school record as result, reading the first item fro the array.
+                        SchoolDetail schoolDetail = countries.get(0);
+                        // As we are getting only one school record as result, reading the first item fro the array.
                         Intent intent = new Intent(SchoolActivity.this, SchoolDetailActivity.class);
-                        intent.putExtra("school", (Serializable) countryModel);
+                        intent.putExtra("school", (Serializable) schoolDetail);
                         startActivity(intent);
                     }
 
@@ -93,19 +94,19 @@ public class SchoolActivity extends AppCompatActivity {
             }
         });
     }
-
+// show progress bar
     private void showProgressBar(){
         if(progressDoalog != null && !progressDoalog.isShowing()){
             progressDoalog.show();
         }
     }
-
+// dismiss progress bar
     private void dismissProgressBar(){
         if(progressDoalog != null && progressDoalog.isShowing()){
             progressDoalog.dismiss();
         }
     }
-
+// school list service call
     private void makeSchoolsListServiceCall(){
 
         MainApplication.apiManager.getSchool(new Callback<List<School>>() {
@@ -137,7 +138,7 @@ public class SchoolActivity extends AppCompatActivity {
         });
     }
 
-    private void updateListWithData(List<School> photoList) {
-       adapter.setSchoolList(photoList);
+    private void updateListWithData(List<School> schoolList) {
+       adapter.setSchoolList(schoolList);
     }
 }

@@ -28,12 +28,12 @@ public class SchoolDetailActivity extends AppCompatActivity {
 
         TextView tvWritingAvgScore = findViewById(R.id.tvWritingAvgScore);
 
-        tvTestTakers.setText("No of Sat Test Taker: "+schoolDetail.getTestTakers());
-        schoolName.setText("School Name :"+schoolDetail.getName());
-        tvReadingScore.setText("Sat Reading Avg Score: "+schoolDetail.getReadingScore());
-        tvMathScore.setText("Sat Math Avg Score :"+schoolDetail.getMathScore());
+        tvTestTakers.setText(schoolDetail.getTestTakers());
+        schoolName.setText(schoolDetail.getName());
+        tvReadingScore.setText(schoolDetail.getReadingScore());
+        tvMathScore.setText(schoolDetail.getMathScore());
 
-        tvWritingAvgScore.setText("Sat Writting Avg Score: "+schoolDetail.getWritingScore());
+        tvWritingAvgScore.setText(schoolDetail.getWritingScore());
 
 
 

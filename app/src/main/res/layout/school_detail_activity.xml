@@ -11,29 +11,65 @@
     <LinearLayout
         android:layout_width="match_parent" android:gravity="center"
         android:layout_height="match_parent" android:orientation="vertical">
+
     <TextView
         android:id="@+id/tvSchoolName" android:textSize="18sp" android:gravity="center" android:textStyle="bold"
         android:layout_width="match_parent" android:textColor="#000000"
         android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent" android:gravity="center"
+            android:layout_height="wrap_content" android:orientation="horizontal">
 
-    <TextView
+        <TextView
+            android:id="@+id/tv1" android:textSize="18sp" android:gravity="center" android:textStyle="bold"
+            android:layout_width="wrap_content" android:text="@string/no_of_test_taker"
+            android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="5dp"/>
+
+        <TextView
         android:id="@+id/tvTestTakers" android:textSize="18sp" android:gravity="center" android:textStyle="bold"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="5dp"/>
-    <TextView
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent" android:gravity="center"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv2" android:textSize="18sp" android:gravity="center" android:textStyle="bold"
+                android:layout_width="wrap_content" android:text="@string/reading_score"
+                android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="5dp"/>
+
+        <TextView
         android:id="@+id/tvReadingScore"  android:textSize="18sp" android:gravity="center" android:textStyle="bold"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="5dp"/>
-    <TextView
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent" android:gravity="center"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv3" android:textSize="18sp" android:gravity="center" android:textStyle="bold"
+                android:layout_width="wrap_content" android:text="@string/math_score"
+                android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="5dp"/>
+
+            <TextView
         android:id="@+id/tvMathScore"  android:textSize="18sp" android:gravity="center" android:textStyle="bold"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="5dp"/>
-    <TextView
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent" android:gravity="center"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv4" android:textSize="18sp" android:gravity="center" android:textStyle="bold"
+                android:layout_width="wrap_content" android:text="@string/writting_score"
+                android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="5dp"/>
+
+            <TextView
         android:id="@+id/tvWritingAvgScore"  android:textSize="18sp" android:gravity="center" android:textStyle="bold"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="5dp"/>
 
     </LinearLayout>
 
-
+    </LinearLayout>
 </LinearLayout>

@@ -8,9 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:text="Sample"
+
         android:padding="10dp"
-        android:id="@+id/region_name"/>
+        android:id="@+id/school_name"/>
 
     <View android:layout_width="match_parent"
         android:layout_height="1dp"

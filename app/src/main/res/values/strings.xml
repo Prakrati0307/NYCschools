@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">20190417-PrakratiSharma-NYCSchools</string>
+    <string name="no_of_test_taker">No Of Test Taker :</string>
+    <string name="math_score">Sat Math Avg Score : </string>
+    <string name="reading_score">Sat Reading Avg Score :</string>
+    <string name="writting_score">Sat Writting Avg Score :</string>
+
 </resources>
