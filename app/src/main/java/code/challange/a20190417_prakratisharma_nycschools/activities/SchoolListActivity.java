@@ -61,9 +61,9 @@ public class SchoolListActivity extends AppCompatActivity {
         adapter.setClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final TextView regionNameView = v.findViewById(R.id.school_name);
-                final String regionName = regionNameView.getText().toString();
-                makeSchoolsDetailServiceCall(regionName);
+                final TextView schoolNameTV = v.findViewById(R.id.school_name);
+                final String schoolStr = schoolNameTV.getText().toString();
+                makeSchoolsDetailServiceCall(schoolStr);
             }
         });
     }
